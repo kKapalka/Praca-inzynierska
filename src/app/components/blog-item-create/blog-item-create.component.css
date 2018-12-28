@@ -1,0 +1,44 @@
+body {
+  background-color: gray;
+}
+
+.form-div {
+  width: 30%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul > li {
+  display: inline-block;
+  padding: 5px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+.button-padding {
+  float: right;
+}
+
+h2 {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error-prompt {
+  margin-top: 10px;
+}

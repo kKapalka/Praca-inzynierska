@@ -1,0 +1,39 @@
+<div class="container col col-lg-6">
+  <div class="wrapper">
+    <h2>Uzupełnij dane</h2>
+
+    <form [formGroup]="formBlog" class="form" role="form" method="post" accept-charset="UTF-8" id="blog-add">
+      <div class="form-group">
+        <label for="title">ID</label>
+        <input [(ngModel)]="item.id" class="form-control" formControlName="title" id="id" name="id" placeholder="ID">
+
+        <label for="title">Tytuł</label>
+        <input [(ngModel)]="item.title" type="text" class="form-control" formControlName="title" id="title" name="title" placeholder="Tytuł">
+
+        <div *ngIf="formBlog.get('title').touched && formBlog.get('title').invalid" class="alert alert-danger error-prompt"
+             required="">
+          Proszę wprowadzić tytuł wpisu
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="url">Link do zdjęcia</label>
+        <input [(ngModel)]="item.url" type="text" class="form-control" formControlName="url" id="url" name="url" placeholder="Link do zdjęcia">
+
+        <div *ngIf="formBlog.get('url').touched && formBlog.get('url').invalid" class="alert alert-danger error-prompt"
+             required="">
+          Proszę wprowadzić poprawny link do zdjęcia
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="content">Zawartość</label>
+        <textarea [(ngModel)]="item.content" class="form-control" id="content" rows="3"></textarea>
+      </div>
+
+      <div class="form-group button-group">
+        <div class="button-padding">
+          <button (click)="setData(item)" class="btn btn-success">Wyślij</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
