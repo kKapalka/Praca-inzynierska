@@ -1,0 +1,27 @@
+
+    <div class="bg-img">
+  <div class="card-body">
+    <div style="text-align:center">
+      <div class="card bg-info">
+        <app-film-item-text [title]="title"> </app-film-item-text></div>
+    </div>
+
+<br><br>
+
+<app-film-item-video
+  [video]="video">
+</app-film-item-video>
+
+<br><br>
+<!--
+    <p align="center">
+      <img src="{{'assets/playfilm.png'}}" width="800px" height="600px">
+
+    </p>
+-->
+
+    <a routerLink="/film/details/:id" class="btn btn-primary" style="float: right; width: 20%">Powrót</a>
+  <br>
+  </div>
+    </div>
+

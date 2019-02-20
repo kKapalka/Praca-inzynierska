@@ -1,0 +1,53 @@
+<div class="card bg-secondary adjustments">
+  <div class="card-body">
+    <div style="text-align:center">
+      <div class="card bg-info">
+        <app-film-item-text [title]="title"> </app-film-item-text></div>
+  </div>
+
+    <div class="container">
+      <div class="form-group row">
+          <div class="col-4">  <div  style="width: 10rem">
+    <app-film-item-image [image]="image"> </app-film-item-image>
+          </div>
+    </div>
+        <div class="col-8">
+          <br>
+        <p>Reżyser:<Strong>
+          <app-film-item-text
+            [content]="director">
+          </app-film-item-text></Strong></p>
+
+          <p>Gatunek:<Strong>
+            <app-film-item-text
+              [content]="genre">
+            </app-film-item-text></Strong></p>
+
+          <p>Czas trwania:<Strong>
+            <app-film-item-text
+              [content]="duration">
+            </app-film-item-text></Strong></p>
+          <a routerLink="/playfilm" *ngIf="authService.isLoggedIn()" class="btn btn-danger" style="float: center; width: 40%" >Oglądaj</a>
+        </div>
+
+      </div>
+    </div>
+
+<br>
+    <div class="card bg-light">
+      <div style="margin-left: 3%">
+<p><Strong>Opis:</Strong></p>
+    <app-film-item-text
+      [content]="content">
+    </app-film-item-text>
+
+    
+      </div>
+      <br>
+  </div>
+  
+    <a routerLink="/film" class="btn btn-primary" style="float: right; width: 20%">Powrót</a>
+
+  </div>
+</div>
+

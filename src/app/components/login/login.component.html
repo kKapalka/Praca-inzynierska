@@ -1,0 +1,33 @@
+
+
+<div class="container-fluid">
+  <br><br>
+  <div align="center">
+    <div class="col-md-5">
+      <form role="form">
+
+        <h1><legend>Logowanie</legend></h1>
+
+        <div class="form-group">
+          <div align="left">
+            <label>login:</label>
+          </div>
+          <input [(ngModel)]="credentials.login" type="text" class="form-control"
+                 name="username" placeholder="Nazwa / Email" title="Wprowadź login">
+        </div>
+        <div class="form-group">
+          <div align="left">
+            <label>hasło:</label>
+          </div>
+          <input [(ngModel)]="credentials.password" type="password" class="form-control"
+                 name="password" placeholder="Hasło" title="Wprowadź hasło">
+        </div>
+
+        <button (click)="signIn()" class="btn btn-default" type="submit" title="Przycisk zaloguj">
+          Zaloguj
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
