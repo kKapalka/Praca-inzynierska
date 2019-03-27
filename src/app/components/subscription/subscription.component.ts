@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import {Employee} from './employee';
 import {AuthService} from '../../services/auth/auth.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import { Subscription } from 'rxjs';
+=======
+import {ActivatedRoute, Router} from "@angular/router";
+>>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
 
 @Component({
   selector: 'app-subscription',
@@ -11,6 +15,7 @@ import { Subscription } from 'rxjs';
 })
 export class SubscriptionComponent implements OnInit {
 
+<<<<<<< HEAD
 employee:Employee[];
 empSelected:Number;
 
@@ -52,4 +57,19 @@ customFunction(val:any)
 this.modifedtext=" The value " + val + " was selected from dropdown";
 }
 
+=======
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
+subscription={
+accountnumber: '',
+validity: '',
+
+};
+
+
+
+  ngOnInit() {
+  }
+
+>>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
 }

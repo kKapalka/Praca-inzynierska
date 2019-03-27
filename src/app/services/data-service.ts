@@ -23,5 +23,8 @@ export class DataService {
   createNewOrUpdate(post){
       return this.http.post(this.url + '/api/post', post);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
 }

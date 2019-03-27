@@ -21,7 +21,10 @@ const userEndpoint = (router) => {
     }
   });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
   router.get('/api/user/:userId', async (request, response, next) => {
       try {
         let result = await business(request).getUserManager(request).get(request.params.userId);
@@ -46,4 +49,7 @@ const userEndpoint = (router) => {
 };
 
 export default userEndpoint;
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d

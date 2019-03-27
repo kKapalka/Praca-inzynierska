@@ -31,9 +31,14 @@ createOrUpdate(credentials) {
    return this.http.post(this.url + '/user/create', credentials);
 }
 
+<<<<<<< HEAD
 createsubscription(subscription) {
    return this.http.post(this.url + '/subscription', subscription);
 }
+=======
+
+
+>>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
 
 logout() {
    return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
