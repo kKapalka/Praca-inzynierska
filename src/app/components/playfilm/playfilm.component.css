@@ -1,0 +1,12 @@
+.bg-img
+{
+    background-image: url('/assets/sala.jpg');
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 100%, 100%;
+    background-color: black;
+}
+
+body {
+    background-color: black;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "serwis",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,9 +20,14 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "angular2-jwt": "^0.2.3",
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.4",
-    "rxjs": "~6.3.3",
+    "jsonwebtoken": "^8.4.0",
+    "moment": "^2.23.0",
+    "rxjs": "~6.2.0",
+    "rxjs-compat": "^6.3.3",
+    "sha": "^2.0.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

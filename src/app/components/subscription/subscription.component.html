@@ -1,0 +1,58 @@
+
+<section class="signup">
+  <br>
+  <div align="center">
+    <div class="col-md-5">
+
+      <div class="sub">
+
+        <h1><legend>Dane subskrypcji:</legend></h1><br>
+        <div align="left">
+
+          <div class="form-group">
+            <label class="control-label">nr konta bankowego:</label>
+            <div class="col-md-16 ">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="firstname" class="form-control" name="nameid" id="firstnameid" placeholder="Podaj numer"
+                        [(ngModel)]="subscription.accountnumber " required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          czas trwania subskrypcji wraz z całkowitą opłatą: 
+        
+          <div >
+            <select [(ngModel)]="subscription.validity" (ngModelChange)="onEmployeeSelected($event)" class="col-md-10">
+
+              <option *ngFor="let emp of employee" [value]="emp.Id">
+                {{emp.Name}}
+              </option>
+            </select>
+            
+          </div>
+
+          <br>
+
+        </div>
+
+
+        <div class="form-group">
+          <div class="col-xs-offset-3 col-xs-10">
+            <button (click)="create()" name="Submit" type="submit" class="btn btn-default">Wykup
+            </button>
+          </div>
+        </div>
+
+
+</div>
+
+    </div>
+  </div>
+
+</section>
+
+

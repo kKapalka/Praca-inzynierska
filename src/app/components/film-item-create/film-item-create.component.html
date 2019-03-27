@@ -1,0 +1,48 @@
+<div class="container">
+  <br>
+  <h4>Dodaj film:</h4>
+  <form (ngSubmit)="submit()">
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">Tytuł:</label></div>
+      <div class="col-8"><input name="title" type="text" class="form-control" placeholder="Wprowadź tytuł" [(ngModel)]="film.title"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">URL plakatu:</label></div>
+      <div class="col-8"><input name="url" type="text" class="form-control" placeholder="Wprowadź adres URL" [(ngModel)]="film.imageurl"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">URL filmu:</label></div>
+      <div class="col-8"><input name="url" type="text" class="form-control" placeholder="Wprowadź adres URL" [(ngModel)]="film.videourl"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">Reżyser:</label></div>
+      <div class="col-8"><input name="director" type="text" class="form-control" placeholder="Podaj reżysera" [(ngModel)]="film.director"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">Gatunek:</label></div>
+      <div class="col-8"><input name="genre" type="text" class="form-control" placeholder="Podaj gatunek" [(ngModel)]="film.genre"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">Czas trwania:</label></div>
+      <div class="col-8"><input name="duration" type="text" class="form-control" placeholder="Podaj czas trwania" [(ngModel)]="film.duration"></div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-2"><label class="col-form-label">Opis:</label></div>
+      <div class="col-8"><input name="content" type="text" class="form-control" placeholder="Wprowadź opis" [(ngModel)]="film.content"></div>
+    </div>
+
+    <div class="form-group row button">
+      <div class="col-9"> <button type="submit" class="btn btn-primary" style="width: 10%">Wyślij</button> </div>
+
+      <a routerLink="/film" class="btn btn-primary" style="float: right; width: 10%">Powrót</a>
+    </div>
+
+
+  </form>
+</div>

@@ -20,4 +20,8 @@ export class DataService {
   addPost(data){
     return this.http.post(this.url + '/api/post/',  data).pipe();
   }
+  createNewOrUpdate(post){
+      return this.http.post(this.url + '/api/post', post);
+    }
+
 }

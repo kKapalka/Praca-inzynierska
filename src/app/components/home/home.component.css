@@ -12,9 +12,7 @@ ul > li {
   padding: 5px;
 }
 
-a {
-  color: white;
-}
+
 
 a:hover {
   color: white;
@@ -32,4 +30,22 @@ h1 {
 h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+.color {
+  color: black;
+}
+
+.bg-img
+{
+    background-image: url('/assets/Background-Narrow1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-color: black;
+}
+form{
+    background-color: rgb(255, 245, 190);
+    padding: 10px;
+    border-radius:5px;
+
 }

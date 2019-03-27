@@ -1,0 +1,83 @@
+
+<section class="signup">
+  <br><br>
+  <div align="center">
+    <div class="col-md-5">
+
+
+      <form class="form-horizontal" method="post" name="signup" id="signup">
+
+
+        <h1><legend>Uzupelnij dane:</legend></h1>
+        <div align="left">
+
+          <div class="form-group">
+            <label class="control-label">Imię:</label>
+            <div class="col-md-16 ">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="firstname" class="form-control" name="nameid" id="firstnameid" placeholder="Podaj imię"
+                       value="" [(ngModel)]="credentials.firstname">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label">Nazwisko:</label>
+            <div class="col-md-16 ">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="lastname" class="form-control" name="lastnameid" id="lastnameid" placeholder="Podaj nazwisko"
+                       value="" [(ngModel)]="credentials.lastname">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Login:</label>
+            <div class="col-md-16">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="name" class="form-control" name="nameid" id="nameid" placeholder="Podaj login"
+                       value="" [(ngModel)]="credentials.login">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Hasło:</label>
+            <div class="col-md-16">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="password" class="form-control" name="passwordid" id="passwordid" placeholder="Podaj hasło"
+                       value="" [(ngModel)]="credentials.password">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Email:</label>
+            <div class="col-md-16">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input type="email" class="form-control" name="emailid" id="emailid" placeholder="Podaj email"
+                       value="" [(ngModel)]="credentials.email">
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+
+
+        <!--<button (click)="create()" name="Submit" type="submit" class="btn btn-lg btn-pink btn-block">Zarejestruj
+    </button>  -->
+        <div class="form-group">
+          <div class="col-xs-offset-3 col-xs-10">
+            <button (click)="create()" name="Submit" type="submit" class="btn btn-default">Zarejestruj
+            </button>
+          </div>
+        </div>
+        <h1  *ngIf="authService.create()"><legend>Zarejestrowano poprawnie</legend>   </h1>
+      </form>
+    </div>
+  </div>
+
+</section>
