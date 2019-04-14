@@ -10,21 +10,17 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(this.url + '/api/posts').pipe(map((x: any[])=> x));
+    return this.http.get(this.url + '/api/posts').pipe(map((x: any[]) => x));
   }
 
   getOne(id) {
     return this.http.get(this.url + '/api/posts/' + id).pipe();
   }
 
-  addPost(data){
+  addPost(data) {
     return this.http.post(this.url + '/api/post/',  data).pipe();
   }
-  createNewOrUpdate(post){
+  createNewOrUpdate(post) {
       return this.http.post(this.url + '/api/post', post);
-    }
-<<<<<<< HEAD
-
-=======
->>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
+  }
 }
