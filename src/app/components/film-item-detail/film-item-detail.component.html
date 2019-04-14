@@ -27,7 +27,7 @@
             <app-film-item-text
               [content]="duration">
             </app-film-item-text></Strong></p>
-          <a routerLink="/playfilm" *ngIf="authService.isLoggedIn()" class="btn btn-danger" style="float: center; width: 40%" >Oglądaj</a>
+          <a routerLink="/playfilm" *ngIf="authService.hasSubscription" class="btn btn-danger" style="float: center; width: 40%" >Oglądaj</a>
         </div>
 
       </div>

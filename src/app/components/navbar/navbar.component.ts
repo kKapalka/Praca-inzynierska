@@ -17,9 +17,7 @@ export class NavbarComponent implements OnInit {
      this.router.navigate(['/']);
    });
   }
-  getCurrentSubscription() {
-    return this.authService.hasSubscription;
-  }
+
   ngOnInit() {
   }
 
