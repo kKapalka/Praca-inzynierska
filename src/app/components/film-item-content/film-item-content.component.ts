@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './film-item-content.component.html',
   styleUrls: ['./film-item-content.component.css']
 })
-export class FilmItemContentComponent implements OnInit{
+export class FilmItemContentComponent implements OnInit {
   @Input('content') content: string;
 
   constructor() { }

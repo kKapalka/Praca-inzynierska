@@ -28,10 +28,6 @@ const userSchema = new mongoose.Schema({
   collection: 'user'
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b1ad12f78ab5720334cfabd095ac153c6e1cf49d
 userSchema.plugin(uniqueValidator);
 
 const UserModel = mongoose.model('user', userSchema);

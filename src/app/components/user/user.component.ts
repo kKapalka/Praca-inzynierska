@@ -10,8 +10,6 @@ export class UserComponent implements OnInit {
   @Input('firstname') firstname: string;
   @Input('firstname') lastname: string;
 
-
-
   constructor() { }
 
   ngOnInit() {

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Employee} from './employee';
 import {AuthService} from '../../services/auth/auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-subscription',

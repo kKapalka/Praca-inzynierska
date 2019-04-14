@@ -8,17 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-credentials = {
-login: '',
-password: ''
-};
+  credentials = {
+    login: '',
+    password: ''
+  };
 
-logged : boolean;
-logout: boolean;
+  logged: boolean;
+  logout: boolean;
 
-constructor(
-    public authService: AuthService,
-              private router: Router) {
+  constructor (public authService: AuthService, private router: Router) {
   }
 
   signIn() {

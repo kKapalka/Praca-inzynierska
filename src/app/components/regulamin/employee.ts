@@ -1,6 +1,4 @@
-export class Employee
-{
-public Id:Number;
-public Name:string;
-
+export class Employee {
+public Id: Number;
+public Name: string;
 }

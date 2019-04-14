@@ -12,8 +12,6 @@ export class FilterPipe implements PipeTransform {
     if (!filterText) {
       return value;
     }
-    console.log(filterText);
-    console.log(value);
     filterText = filterText.toLowerCase();
 
     return value.filter(val => {

@@ -10,7 +10,7 @@ export class SummaryPipe implements PipeTransform {
       return null;
     }
 
-    return value.substr(0,limit)+" (...)";
+    return value.substr(0, limit) + ' (...)';
   }
 
 }
