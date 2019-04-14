@@ -10,9 +10,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ">
       <a class="nav-item nav-link" routerLink="regulamin">Regulamin</a>
-      <a class="nav-item nav-link" routerLink="login">Logowanie</a>
-      <a class="nav-item nav-link" routerLink="register">Rejestracja</a>
-      <a class="nav-item nav-link" routerLink="film">Katalog filmów</a>
+      <a class="nav-item nav-link" *ngIf="!authService.isLoggedIn()" routerLink="login">Logowanie</a>
+      <a class="nav-item nav-link" *ngIf="!authService.isLoggedIn()" routerLink="register">Rejestracja</a>
+      <a class="nav-item nav-link" *ngIf="authService.isLoggedIn()" routerLink="film">Katalog filmów</a>
     </div>
 
     <div class="navbar-nav ml-auto" >

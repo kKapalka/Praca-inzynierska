@@ -22,21 +22,9 @@
             </div>
           </div>
 
-          czas trwania subskrypcji wraz z całkowitą opłatą: 
-        
-          <div >
-            <select [(ngModel)]="subscription.validity" (ngModelChange)="onEmployeeSelected($event)" class="col-md-10">
-
-              <option *ngFor="let emp of employee" [value]="emp.Id">
-                {{emp.Name}}
-              </option>
-            </select>
-            
-          </div>
-          <br>
           <div class="form-group">
             <label for="exampleFormControlSelect1">okres ważności w miesiącach:</label>
-            <select class="form-control" id="exampleFormControlSelect1" value=""
+            <select class="form-control" id="exampleFormControlSelect1" value="" name="validity"
                     [(ngModel)]="subscription.validity">
               <option>1  (30 zł)</option>
               <option>2  (55 zł)</option>
@@ -50,7 +38,7 @@
           <br />
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <input class="form-check-input" type="checkbox" name="invalidCheck" value="" id="invalidCheck" required>
               <label class="form-check-label" for="invalidCheck">
                 Potwierdzam dane i zgadzam się na warunki
               </label>

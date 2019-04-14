@@ -10,7 +10,12 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class SubscriptionComponent implements OnInit {
 
-  employee: Employee[];
+  employee: Employee[] = [
+    {Id: 1, Name: '1 miesiąc (30 zł)'},
+    {Id: 2, Name: '2 miesiące (55 zł)'},
+    {Id: 3, Name: '3 miesiące (75 zł)'},
+    {Id: 4, Name: '4 miesiące (90 zł)'}
+    ];
   empSelected: Number;
   modifedtext: string;
   subscription = {
@@ -26,14 +31,7 @@ export class SubscriptionComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.employee = [
-      {Id: 1, Name: '1 miesiąc (30 zł)'},
-      {Id: 2, Name: '2 miesiące (55 zł)'},
-      {Id: 3, Name: '3 miesiące (75 zł)'},
-      {Id: 4, Name: '4 miesiące (90 zł)'}
-    ];
-  }
+  ngOnInit() {}
 
   onEmployeeSelected(val: any) {
     this.customFunction(val);

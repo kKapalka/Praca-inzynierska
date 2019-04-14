@@ -5,16 +5,15 @@
 
       <form role="form">
 
-    <font face="cambria">
-      <p align="center">
-        <font size="30">Internetowa wypożyczalnia filmów</font>
-      </p>
-    </font>
 
-    <a href="/register"><p class="dropdown-item color">Aby móc w pełni korzystać z usług serwisu załóż konto, a następnie się zaloguj</p></a>
+      <p align="center" style="font-family: Cambria; font-size:30px">
+        Internetowa wypożyczalnia filmów
+      </p>
+
+    <a href="/register" *ngIf="!authService.isLoggedIn()"><p class="dropdown-item color">Aby móc w pełni korzystać z usług serwisu załóż konto, a następnie się zaloguj</p></a>
       </form>
         <p align="center">
-      <a href="/film">
+      <a routerLink="film">
       <img src="{{'assets/playfilm1.png'}}" width="600px" height="400px">
       </a>
 
