@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {DetailsService} from '../../details.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DataService} from '../../services/data-service';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-film',
@@ -13,7 +14,8 @@ export class FilmComponent implements OnInit {
   items;
   @Input() filterText: string;
 
-  constructor(private details: DetailsService, private dataService: DataService, private router: Router, private route: ActivatedRoute) {
+  constructor(private details: DetailsService, private dataService: DataService, private router: Router, private route: ActivatedRoute
+  , private auth: AuthService) {
   }
 
   ngOnInit() {
@@ -22,7 +24,6 @@ export class FilmComponent implements OnInit {
     });
 
     this.dataService.getAll().subscribe(result => {
-      console.log(result);
       this.items = result;
     });
   }

@@ -24,7 +24,6 @@ import {AuthInterceptor} from './services/auth/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import {AuthService} from './services/auth/auth.service';
-import { AdminGuard } from './services/admin-guard.guard';
 import { RegulaminComponent } from './components/regulamin/regulamin.component';
 import { FilmItemContentComponent } from './components/film-item-content/film-item-content.component';
 import { PlayfilmComponent } from './components/playfilm/playfilm.component';
@@ -108,7 +107,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes,{ enableTracing: true })
+    RouterModule.forRoot(appRoutes, {enableTracing: true })
   ],
   providers: [DataService,
   AuthService,

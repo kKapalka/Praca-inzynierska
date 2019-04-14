@@ -8,8 +8,11 @@ import {Token} from '../../models/token';
 export class AuthService {
 
    private url = 'http://localhost:3000/api';
-
-   constructor(private http: HttpClient) {}
+    hasSubscription = false;
+   constructor(private http: HttpClient) {
+     this.getSubscriptions();
+     console.log(this.currentUser);
+   }
 
   authenticate(credentials) {
       return this.http.post(this.url + '/user/auth', {
@@ -18,6 +21,7 @@ export class AuthService {
       }).pipe(map((result: Token) => {
          if (result && result.token) {
              localStorage.setItem('token', result.token);
+              this.getSubscriptions();
              return true;
          }
          return false;
@@ -30,13 +34,27 @@ createOrUpdate(credentials) {
 }
 
 createsubscription(subscription) {
-   return this.http.post(this.url + '/subscription', subscription);
+     subscription.userId = this.currentUser.userId;
+     this.http.post(this.url + '/subscription', subscription).subscribe(res => {
+        this.getSubscriptions();
+     });
+}
+
+getSubscriptions() {
+     if (this.currentUser) {
+       this.http.get(this.url + '/subscriptions/' + this.currentUser.userId).subscribe(res => {
+         if (res !== null) {
+           this.hasSubscription = true;
+         }
+       });
+     }
 }
 
   logout() {
      return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
     .pipe(map(() => {
                localStorage.removeItem('token');
+               this.hasSubscription = false;
            })
       );
   }
@@ -49,7 +67,11 @@ createsubscription(subscription) {
      }
      return !(jwtHelper.isTokenExpired(token));
   }
-
+  isAdmin() {
+     if (this.currentUser !== null) {
+       return this.currentUser.role === 'admin';
+     }
+  }
   get currentUser() {
      const token = this.getToken();
      if (!token) {

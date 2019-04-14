@@ -1,6 +1,7 @@
 'use strict'
 
 import subscriptionDAO from '../DAO/subscriptionDAO'
+import postDAO from "../DAO/postDAO";
 
 function create(context) {
   async function query() {
@@ -10,7 +11,12 @@ function create(context) {
     }
   }
 
-
+  async function get(id) {
+    let result = await subscriptionDAO.get(id);
+    if (result) {
+      return result;
+    }
+  }
   async function createsubscription(data) {
     let result = await subscriptionDAO.createsubscription(data);
     if (result) {
@@ -21,6 +27,7 @@ function create(context) {
   return {
     query: query,
     createsubscription: createsubscription,
+    get: get
   };
 }
 

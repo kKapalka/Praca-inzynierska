@@ -12,9 +12,19 @@ const subscriptionEndpoint = (router) => {
     }
   });
 
-  router.post('/api/subscription/', async (request, response, next) => {
+  router.get('/api/subscriptions/:id', async (request, response, next) => {
+    try {
+      let result = await business(request).getSubscriptionManager().get(request.params.id);
+      response.status(200).send(result);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  router.post('/api/subscription', async (request, response, next) => {
     try {
       let result = await business(request).getSubscriptionManager().createsubscription(request.body);
+      console.log(result);
       response.status(200).send(result);
     } catch (error) {
     applicationException.errorHandler(error, response);

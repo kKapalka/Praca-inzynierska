@@ -25,12 +25,8 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">okres ważności w miesiącach:</label>
             <select class="form-control" id="exampleFormControlSelect1" value="" name="validity"
-                    [(ngModel)]="subscription.validity">
-              <option>1  (30 zł)</option>
-              <option>2  (55 zł)</option>
-              <option>3  (75 zł)</option>
-              <option>4  (90 zł)</option>
-              <option>5  (100 zł)</option>
+                    [(ngModel)]="subscription.validityMonths">
+              <option *ngFor="let option of options" [value]="option.value">{{option.name}}</option>
             </select>
           </div>
 

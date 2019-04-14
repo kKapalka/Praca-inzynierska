@@ -7,7 +7,9 @@ import applicationException from "../service/applicationException";
 
 const subscriptionSchema = new mongoose.Schema({
   accountnumber: { type: String, required: true },
-  validity: { type: String, required: false }
+  endDate: { type: Date, required: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user', required: true},
+  startDate: {type: Date, required: true}
 }, {
   collection: 'subscription'
 });
@@ -16,8 +18,18 @@ subscriptionSchema.plugin(uniqueValidator);
 const SubscriptionModel = mongoose.model('subscription', subscriptionSchema);
 
 async function query() {
-  // console.log("asd")
   const result = await SubscriptionModel.find({});
+  {
+    if (result) {
+      return mongoConverter(result);
+    }
+  }
+}
+
+async function get(id) {
+  const result = await SubscriptionModel.findOne({userId: id, endDate: {
+    $gte: Date.now()
+    }});
   {
     if (result) {
       return mongoConverter(result);
@@ -28,7 +40,16 @@ async function query() {
 async function createsubscription(data) {
   return await Promise.resolve().then(() => {
     if (!data.id) {
-      return new SubscriptionModel(data).save().then(result => {
+      var now = new Date();
+      var later = new Date();
+      later.setMonth(later.getMonth() + data.validityMonths);
+      var newData = {
+        accountnumber: data.accountnumber,
+        userId: data.userId,
+        startDate: now,
+        endDate: later
+      };
+      return new SubscriptionModel(newData).save().then(result => {
         if (result[0]) {
           return mongoConverter(result[0]);
         }
@@ -49,6 +70,6 @@ async function createsubscription(data) {
 export default {
   query: query,
   createsubscription: createsubscription,
-
+  get: get,
   model: SubscriptionModel
 }

@@ -1,5 +1,5 @@
 <div class="adjustments">
-  <a routerLink="/film/add" class="btn btn-primary" style="float: right; width: 20%">Dodaj nowy</a>
+  <a routerLink="/film/add" class="btn btn-primary" style="float: right; width: 20%" *ngIf="auth.isAdmin()">Dodaj nowy</a>
 </div>
 <div style="clear: both;"></div>
 <br>
