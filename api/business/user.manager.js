@@ -53,8 +53,12 @@ function create(context) {
     return await TokenDAO.remove(userId);
   }
 
+  async function getUserById(userId) {
+    return await UserDAO.get(userId);
+  }
   return {
     authenticate: authenticate,
+    getUserById: getUserById,
     getUserByToken: getUserByToken,
     createNewOrUpdate: createNewOrUpdate,
     removeUserById: removeUserById,

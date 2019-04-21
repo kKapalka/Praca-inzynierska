@@ -60,7 +60,6 @@ async function createsubscription(data) {
   }).catch(error => {
     if ('ValidationError' === error.login) {
       error = error.errors[Object.keys(error.errors)[0]];
-      console.log(error);
       throw applicationException.new(applicationException.BAD_REQUEST, error.message);
     }
     throw error;

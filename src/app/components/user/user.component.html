@@ -1,15 +1,16 @@
 
 <div align="center">
-  <div class="col-md-8">
-    <form role="form">
-      <div align="left">
-        <p>Moje konto</p>
-        <a routerLink="/subscription" class="btn btn-danger" style="width: 40%" >Subskrypcja</a>
-        <div> {{login}}</div>
-        <div> {{firstname}}</div>
-        <div> {{lastname}}</div>
-        <br><br><br><br><br><br>
-      </div>
-    </form>
+  <div class="row" style="margin-top: 5%">
+    <div class="col-sm-3 offset-sm-2" style="text-align: left">
+      <h3>Moje konto: </h3>
+      <p> {{"Login: " + login}}</p>
+      <p> {{"Imię: " + firstname}}</p>
+      <p> {{"Nazwisko: " + lastname}}</p>
+      <p *ngIf="!hasSubscription()" style="font-weight: bold; color:#bb0000">Nie masz aktywnej subskrypcji. <br>
+      Wykup subskrypcję aby móc oglądać filmy</p>
+    </div>
+    <div class="col-sm-7">
+      <a routerLink="/subscription" class="btn btn-danger" style="width: 40%" >Wykup subskrypcję</a>
+    </div>
   </div>
 </div>

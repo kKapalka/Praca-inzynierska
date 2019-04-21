@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-user',
@@ -6,12 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  @Input('login') login: string;
-  @Input('firstname') firstname: string;
-  @Input('firstname') lastname: string;
-
-  constructor() { }
-
+  login: string;
+  firstname: string;
+  lastname: string;
+  constructor( private auth: AuthService) {
+    this.auth.getSubscriptions();
+    this.auth.getUserById(this.auth.currentUser.userId).subscribe(res => {
+      console.log(res);
+      this.login = res.login;
+      this.firstname = res.firstname;
+      this.lastname = res.lastname;
+    });
+  }
+  hasSubscription(){
+    return this.auth.hasSubscription;
+  }
   ngOnInit() {
   }
 

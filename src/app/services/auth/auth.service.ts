@@ -11,7 +11,6 @@ export class AuthService {
     hasSubscription = false;
    constructor(private http: HttpClient) {
      this.getSubscriptions();
-     console.log(this.currentUser);
    }
 
   authenticate(credentials) {
@@ -33,11 +32,13 @@ createOrUpdate(credentials) {
    return this.http.post(this.url + '/user/create', credentials);
 }
 
+getUserById(userId) {
+     return this.http.get(this.url + '/user/' + userId);
+}
+
 createsubscription(subscription) {
      subscription.userId = this.currentUser.userId;
-     this.http.post(this.url + '/subscription', subscription).subscribe(res => {
-        this.getSubscriptions();
-     });
+     return this.http.post(this.url + '/subscription', subscription);
 }
 
 getSubscriptions() {

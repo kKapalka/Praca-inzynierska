@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./subscription.component.css']
 })
 export class SubscriptionComponent implements OnInit {
-
+  failedSub = false;
   options: ({ value: number; name: string })[] = [{
     value: 1,
     name: '1 miesiąc (30 zł)'
@@ -31,7 +31,19 @@ export class SubscriptionComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
 
   create() {
-    return this.authService.createsubscription(this.subscription);
+    this.authService.createsubscription(this.subscription).subscribe(res => {
+      this.authService.getSubscriptions();
+      setTimeout(() => {
+        if (this.authService.hasSubscription) {
+          this.router.navigate(['user']);
+        } else {
+          this.failedSub = true;
+          setTimeout(() => {
+            this.failedSub = false;
+          }, 2000);
+        }
+      }, 500);
+    });
   }
 
   ngOnInit() {}
