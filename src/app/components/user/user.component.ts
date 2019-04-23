@@ -13,7 +13,6 @@ export class UserComponent implements OnInit {
   constructor( private auth: AuthService) {
     this.auth.getSubscriptions();
     this.auth.getUserById(this.auth.currentUser.userId).subscribe(res => {
-      console.log(res);
       this.login = res.login;
       this.firstname = res.firstname;
       this.lastname = res.lastname;

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {JwtHelper} from 'angular2-jwt';
 import {map} from 'rxjs/operators';
 import {Token} from '../../models/token';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -32,7 +33,7 @@ createOrUpdate(credentials) {
    return this.http.post(this.url + '/user/create', credentials);
 }
 
-getUserById(userId) {
+getUserById(userId): Observable<any> {
      return this.http.get(this.url + '/user/' + userId);
 }
 
